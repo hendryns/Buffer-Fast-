@@ -43,7 +43,6 @@ def map_view() -> rx.Component:
         id="map-view",
         center=State.map_center,
         zoom=State.map_zoom,
-        max_bounds=rx.cond(State.map_max_bounds, State.map_max_bounds, None),
         height="100%",
         width="100%",
         class_name="rounded-2xl shadow-lg border border-gray-200",
