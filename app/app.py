@@ -80,4 +80,4 @@ app = rxe.App(
         ),
     ],
 )
-app.add_page(index)
+app.add_page(index, route="/")
