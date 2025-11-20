@@ -1,5 +1,5 @@
 import reflex as rx
-from typing import TypedDict, Any
+from typing import TypedDict, Any, Optional
 import csv
 import io
 import logging
@@ -31,7 +31,19 @@ class State(rx.State):
     input_error: str = ""
     map_center: LatLng = latlng(lat=40.7128, lng=-74.006)
     map_zoom: float = 4.0
-    map_max_bounds: LatLngBounds | None = None
+    map_max_bounds: Optional[LatLngBounds] = None
+
+    @rx.event
+    def set_point_name(self, value: str):
+        self.point_name = value
+
+    @rx.event
+    def set_latitude(self, value: str):
+        self.latitude = value
+
+    @rx.event
+    def set_longitude(self, value: str):
+        self.longitude = value
 
     @rx.event
     def add_point(self):
